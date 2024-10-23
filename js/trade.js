@@ -13,7 +13,7 @@ $(document).ready(() => {
     }
 
     function GetStringCode(code) {
-        return `<img src="../assets/images/${code}.png" class="img-fluid"> ${code}`
+        return `<img src="assets/images/${code}.png" class="img-fluid"> ${code}`
     }
 
     function GerarGrid(dados){
