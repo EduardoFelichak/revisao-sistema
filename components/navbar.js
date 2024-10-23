@@ -19,6 +19,9 @@ export function getNavBar(email){
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="color.html?email=${encodeURIComponent(email)}">Cores</a>
                     </li> 
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="product.html?email=${encodeURIComponent(email)}">Produtos</a>
+                    </li> 
                 </ul>
                 <a href="index.html" class= "btn btn-outline-danger">Sair<a/>
             </div>
