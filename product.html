@@ -13,7 +13,7 @@
         <section>
             <h4 class="text-danger">Cadastro de Produtos</h4>
             <div class="text-end">
-                <button type="button" class="btn btn-outline-danger">
+                <button id="insert" type="button" class="btn btn-outline-danger" data-state="0" data-bs-toggle="modal" data-bs-target="#product-modal">
                     <i class="bi bi-plus-lg"></i>
                 </button>
             </div>
@@ -22,7 +22,7 @@
                     <tr>
                         <th class="text-danger" scope="col">Nome</th>
                         <th class="text-danger" scope="col">Descrição</th>
-                        <th class="text-danger" scope="col">Valor R$</th> 
+                        <th class="text-danger" scope="col">Preço R$</th> 
                         <th class="text-danger" scope="col"></th>  
                     </tr>
                     <tbody id="body-table"></tbody>
@@ -30,6 +30,56 @@
             </table>
         </section>
     </div>
+
+    <div class="modal fade" id="product-modal" tabindex="-1" aria-labelledby="product-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="product-modal-label"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label=""></button>
+                </div>
+                <div class="modal-body">
+                    <form id="product-form">
+                        <div class="mb-3">
+                            <label for="product-name" class="form-label text-danger">Nome do Produto</label>
+                            <input type="text" class="form-control" id="product-name" name="product-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-descr" class="form-label text-danger">Descrição</label>
+                            <input type="text" class="form-control" id="product-descr" name="product-descr" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-price" class="form-label text-danger">Preço</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input type="Number" class="form-control" id="product-price" name="product-price" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-danger" id="save-product">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirm-delete" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="modal-label">Tem certeza que deseja deletar este produto?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="yes-delete">Sim</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="module" src="js/product.js"></script>
 </body>
