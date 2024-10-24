@@ -1,3 +1,5 @@
+const URL_BASE = 'http://localhost:8080/user'
+
 $(document).ready(() => {
     $('#btn-login').on('click', () => {
         let email    = $('#lbl-email').val()
@@ -7,19 +9,28 @@ $(document).ready(() => {
             return
 
         $.ajax({
-            url: 'https://reqres.in/api/login',
+            url: `${URL_BASE}/auth`,
             method: 'POST',
-            data: {
+            contentType: 'application/json', 
+            data: JSON.stringify({
                 email: email,
-                password: password
-            },
-            success: () => {
-                window.location.href = `home.html?email=${encodeURIComponent(email)}`
+                pass: password
+            }),
+            success: (response) => {
+                debugger
+                console.log(response)
+
+                if (response.id) {
+                    window.location.href = `home.html?name=${encodeURIComponent(response.nome)}`;
+                } else {
+                    alert('Login falhou');
+                }
             },
             error: () => {
                 alert('Credenciais Inválidas')
             }
-        })
+        });
+        
     })
 
     function validaCredenciais(email, password) {

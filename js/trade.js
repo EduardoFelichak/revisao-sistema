@@ -2,8 +2,8 @@ import { getNavBar } from '../components/navbar.js'
 
 $(document).ready(() => {
     let urlParam = new URLSearchParams(window.location.search)
-    let email = urlParam.get('email')
-    $('header').append(getNavBar(email))
+    let name = urlParam.get('name')
+    $('header').append(getNavBar(name))
 
     function InicializarTela() {
         fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')

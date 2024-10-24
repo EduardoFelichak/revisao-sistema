@@ -1,4 +1,4 @@
-export function getNavBar(email){
+export function getNavBar(name){
     return `
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -11,16 +11,16 @@ export function getNavBar(email){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html?email=${encodeURIComponent(email)}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="home.html?name=${encodeURIComponent(name)}">Home</a>
                     </li> 
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="trade.html?email=${encodeURIComponent(email)}">Cotação</a>
+                    <a class="nav-link active" aria-current="page" href="trade.html?name=${encodeURIComponent(name)}">Cotação</a>
                     </li> 
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="color.html?email=${encodeURIComponent(email)}">Cores</a>
+                    <a class="nav-link active" aria-current="page" href="color.html?name=${encodeURIComponent(name)}">Cores</a>
                     </li> 
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="product.html?email=${encodeURIComponent(email)}">Produtos</a>
+                    <a class="nav-link active" aria-current="page" href="product.html?name=${encodeURIComponent(name)}">Produtos</a>
                     </li> 
                 </ul>
                 <a href="index.html" class= "btn btn-outline-danger">Sair<a/>

@@ -6,9 +6,9 @@ const EDIT_STATE   = 1
 
 $(document).ready(() => {
     let urlParam = new URLSearchParams(window.location.search)
-    let email = urlParam.get('email')
-    $('#param-email').text(email)
-    $('header').append(getNavBar(email))
+    let name = urlParam.get('name')
+    $('#param-name').text(name)
+    $('header').append(getNavBar(name))
 
     function FetchRegistros() {
         fetch(URL_BASE)
